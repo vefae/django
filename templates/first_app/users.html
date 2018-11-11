@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+  </head>
+  <body>
+    <h1>Welcome User Page</h1>
+    <h2>Here are the user list:</h2>
+    <div class="djangtwo">
+      {% if user_list %}
+        <ol>
+        {% for acc in user_list %}
+        <li>User Info</li>
+        <ul>
+          <li>First Name: {{ acc.first_name }} </li>
+          <li>Last Name: {{ acc.last_name }} </li>
+          <li>Email: {{ acc.email }} </li>
+        </ul>
+        {% endfor %}
+        </ol>
+      {% else %}
+      <p>No users found.</p>
+      {% endif %}
+
+    </div>
+  </body>
+</html>
