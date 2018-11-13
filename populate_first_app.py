@@ -24,15 +24,12 @@ def populate(N=5):
     for entry in range(N):
         #get topics for the entry
         top = add_topic()
-
         #create the fake date for that entry
         fake_url = fakegen.url()
         fake_date = fakegen.date()
         fake_name = fakegen.company()
-
         # create the new webpage entry
         webpg = WebPage.objects.get_or_create(topic=top,url=fake_url,name=fake_name)[0]
-
         # create a fake access AccessRecord
         acc_rec = AccessRecord.objects.get_or_create(name=webpg,date=fake_date)[0]
 

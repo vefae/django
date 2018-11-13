@@ -21,7 +21,4 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('first_app/', include('first_app.urls')),
     path('admin/', admin.site.urls),
-   # path('users/', include('first_app.urls')),
-    #path('formpage/', views.form_name_view, name='form_name'),
-    #path('signup/', views.signup, name='signup'),
 ]
